@@ -266,6 +266,7 @@ class Tracker
                 $this->logIsEnabled() &&
                 $this->parserIsAvailable() &&
                 $this->isTrackableIp() &&
+                $this->pathIsTrackable() &&
                 $this->isTrackableEnvironment() &&
                 $this->routeIsTrackable() &&
                 $this->notRobotOrTrackable();
@@ -375,6 +376,16 @@ class Tracker
         return $this->dataRepositoryManager->routeIsTrackable($this->route);
     }
 
+    public function pathIsTrackable()
+    {
+        $forbidden = $this->config->get('do_not_track_paths');
+
+        return
+            !$forbidden ||
+            !$this->request->path() ||
+            !in_array_wildcard($this->request->path(), $forbidden);
+    }
+    
     public function routerMatched($log)
     {
         if ($this->dataRepositoryManager->routeIsTrackable($this->route)) {
