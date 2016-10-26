@@ -109,8 +109,6 @@ class ServiceProvider extends PragmaRXServiceProvider
 
             $this->registerGlobalEventLogger();
 
-            $this->registerDatatables();
-
             $this->registerGlobalViewComposers();
 
             $this->commands('tracker.tables.command');
@@ -528,13 +526,6 @@ class ServiceProvider extends PragmaRXServiceProvider
                 });
             });
         });
-    }
-
-    private function registerDatatables()
-    {
-        $this->registerServiceProvider('Bllim\Datatables\DatatablesServiceProvider');
-
-        $this->registerServiceAlias('Datatable', 'Bllim\Datatables\Facade\Datatables');
     }
 
     /**
