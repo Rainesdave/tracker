@@ -35,6 +35,13 @@ return [
     'do_not_track_routes' => [
         'tracker.stats.*',
     ],
+    
+    /*
+     * Which paths are not trackable?
+     */
+    'do_not_track_paths' => [
+        //'admin*',
+    ],
 
     /*
      * The Do Not Track Ips is used to disable Tracker for some IP addresses:
