@@ -385,7 +385,7 @@ class Tracker
             !$this->request->path() ||
             !in_array_wildcard($this->request->path(), $forbidden);
     }
-    
+
     public function routerMatched($log)
     {
         if ($this->dataRepositoryManager->routeIsTrackable($this->route)) {

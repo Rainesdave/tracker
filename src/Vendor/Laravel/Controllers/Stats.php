@@ -50,7 +50,7 @@ class Stats extends Controller
 
     public function visits(Session $session)
     {
-        $datatables_data = 
+        $datatables_data =
         [
             'datatables_ajax_route' => route('tracker.stats.api.visits'),
             'datatables_columns'    => '

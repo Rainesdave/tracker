@@ -35,7 +35,7 @@ return [
     'do_not_track_routes' => [
         'tracker.stats.*',
     ],
-    
+
     /*
      * Which paths are not trackable?
      */
