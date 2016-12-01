@@ -25,12 +25,9 @@ class Authentication
 
     private function executeAuthMethod($method)
     {
-        foreach ($this->authentication as $auth)
-        {
-            if(is_callable([$auth, $method], true, $callable_name))
-            {
-                if ($data = call_user_func($callable_name))
-                {
+        foreach ($this->authentication as $auth) {
+            if (is_callable([$auth, $method], true, $callable_name)) {
+                if ($data = call_user_func($callable_name)) {
                     return $data;
                 }
             }
